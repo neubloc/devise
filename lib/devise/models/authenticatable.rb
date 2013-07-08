@@ -239,7 +239,7 @@ module Devise
         # an e-mail for password reset. In such cases, find_for_authentication
         # is not called.
         def find_for_authentication(tainted_conditions)
-          find_first_by_auth_conditions(tainted_conditions)
+          find_first_by_auth_conditions(tainted_conditions, :order => column)
         end
 
         def find_first_by_auth_conditions(tainted_conditions, opts={})
